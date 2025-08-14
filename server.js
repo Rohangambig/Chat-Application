@@ -7,14 +7,21 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: [
-            'https://poetic-pixie-5d7889.netlify.app/', // deployed frontend
-            'http://127.0.0.1:5500' // local dev frontend
+      origin: [
+            'https://poetic-pixie-5d7889.netlify.app',
+            'http://127.0.0.1:5500'
         ],
+
         methods: ['GET', 'POST']
     }
 });
 
+const cors = require("cors");
+
+app.use(cors({
+    origin: ["https://poetic-pixie-5d7889.netlify.app"], // your frontend URL
+    credentials: true
+}));
 
 
 const userList = new Map();
