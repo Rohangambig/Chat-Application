@@ -8,12 +8,13 @@ const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
         origin: [
-            'https://zingy-swan-d94a92.netlify.app',
-            'http://localhost:5500'
+            'https://zingy-swan-d94a92.netlify.app', // deployed frontend
+            'http://127.0.0.1:5500' // local dev frontend
         ],
         methods: ['GET', 'POST']
     }
 });
+
 
 
 const userList = new Map();
