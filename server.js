@@ -6,11 +6,15 @@ const app = express();
 
 const server = http.createServer(app);
 const io = new Server(server, {
-    cors:{
-        origin:'https://zingy-swan-d94a92.netlify.app/',
-        methods:['GET',"POST"]
+    cors: {
+        origin: [
+            'https://zingy-swan-d94a92.netlify.app',
+            'http://localhost:5500'
+        ],
+        methods: ['GET', 'POST']
     }
 });
+
 
 const userList = new Map();
 const messageList = [];

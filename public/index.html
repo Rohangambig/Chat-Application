@@ -18,10 +18,10 @@
         <input type="text" placeholder="message">
         <button type="submit">send</button>
     </form>
-    <script src="http://localhost:5001/socket.io/socket.io.js"></script>
+    <script src="https://chat-application-agtx.onrender.com/socket.io/socket.io.js"></script>
     <script>
 
-        const socket = io("http://localhost:5001");
+        const socket = io("https://chat-application-agtx.onrender.com");
         let message = document.querySelector('#message');
         let userList =  document.querySelector('#user-list');
         let form = document.querySelector('#form');
